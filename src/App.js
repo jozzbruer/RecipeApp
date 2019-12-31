@@ -10,7 +10,7 @@ const App = () => {
   
   const [recipes, setRecipes] = useState([]);
   const [search, setSearch] = useState("");
-  const [query, setQuery] = useState('rice');
+  const [query, setQuery] = useState('chicken');
   
 
   useEffect(() => {
@@ -48,7 +48,8 @@ const App = () => {
      
         {recipes.map(recipe => (
          
-          <Recipe key={i++}  title={recipe.recipe.label} calories={recipe.recipe.calories} image={recipe.recipe.image } />
+          <Recipe key={i++}  title={recipe.recipe.label} calories={recipe.recipe.calories} image={recipe.recipe.image }
+          ingredients={recipe.recipe.ingredientLine} />
         ))}
     </div>
   );
