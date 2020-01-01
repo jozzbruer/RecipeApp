@@ -38,19 +38,26 @@ const App = () => {
 
   let i = 0
   return (
-    <div className="container-fluid">
+    <div>
+      <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">Recipe App </a>
         <form onSubmit={getSearch} className="form-inline">
             <div className="form-group mx-sm-3 mb-2">
               <input type="text" className="form-control" id="search" placeholder="Search"  value={search} onChange={updateSearch} />
             </div>
-          <button  type="submit" className="btn btn-primary mb-2"> Search </button>
+          <button  type="submit" className="btn btn-outline-primary"> Search </button>
          </form>
-     
+      </nav>
+      <div className="container-fluid">
+        <div className="content">
         {recipes.map(recipe => (
          
           <Recipe key={i++}  title={recipe.recipe.label} calories={recipe.recipe.calories} image={recipe.recipe.image }
-          ingredients={recipe.recipe.ingredientLine} />
+          ingredients={recipe.recipe.ingredients} />
         ))}
+        </div>
+      </div>
+      <br />
     </div>
   );
 }
