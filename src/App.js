@@ -1,5 +1,7 @@
 import React, {useEffect, useState } from 'react'; 
 import Recipe from './components/Recipe';
+import Footer from './components/Footer'
+import { Container, Row } from 'react-bootstrap'
 import './App.css';
 
 const App = () => {
@@ -39,25 +41,26 @@ const App = () => {
   let i = 0
   return (
     <div>
-      <nav class="navbar navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Recipe App </a>
+      <nav class="navbar">
+      <a class="navbar-brand" href="/">Recipe App </a>
         <form onSubmit={getSearch} className="form-inline">
             <div className="form-group mx-sm-3 mb-2">
-              <input type="text" className="form-control" id="search" placeholder="Search"  value={search} onChange={updateSearch} />
+              <input type="text" className="form-control" id="search" placeholder="Search your recipe"  value={search} onChange={updateSearch} />
             </div>
           <button  type="submit" className="btn btn-outline-primary"> Search </button>
          </form>
       </nav>
-      <div className="container-fluid">
-        <div className="content">
+      <Container>
+       <h1 className="text-center">List of diffrent  {query}'s recipe</h1>
+        <Row className="row mt-5">
         {recipes.map(recipe => (
          
           <Recipe key={i++}  title={recipe.recipe.label} calories={recipe.recipe.calories} image={recipe.recipe.image }
           ingredients={recipe.recipe.ingredients} />
         ))}
-        </div>
-      </div>
-      <br />
+        </Row>
+      </Container>
+      <Footer />
     </div>
   );
 }

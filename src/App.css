@@ -6,13 +6,23 @@ html, body, #root {
   height: 100%;
 }
 
-
-.card{
-  width: 18rem;
+.navbar{
+  background-color: #BF3044;
+}
+.navbar a{
+  color:white;
+  font-weight: bold;
 }
 
-.content{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+#footer{
+  width: 100%;
+  background-color: #BF3044;
+  height: 160px;
+  color:white;
+  padding-top: 55px;
+}
+
+#footer a{
+  color:white;
+  font-weight: bold;
 }
